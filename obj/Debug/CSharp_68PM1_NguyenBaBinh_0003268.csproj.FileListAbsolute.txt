@@ -1,0 +1,10 @@
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\bin\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe.config
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\bin\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\bin\Debug\CSharp_68PM1_NguyenBaBinh_0003268.pdb
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.AssemblyReference.cache
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.Form1.resources
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.Properties.Resources.resources
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.GenerateResource.cache
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.CoreCompileInputs.cache
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.pdb
