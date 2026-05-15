@@ -8,3 +8,4 @@ C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.CoreCompileInputs.cache
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.pdb
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.FormQLSV.resources
