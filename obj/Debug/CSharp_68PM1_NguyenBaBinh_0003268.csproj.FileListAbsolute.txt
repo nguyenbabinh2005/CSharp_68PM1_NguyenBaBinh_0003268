@@ -9,3 +9,6 @@ C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.pdb
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.FormQLSV.resources
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.UCQLLH.resources
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.UCQLSinhVien.resources
+C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.MainForm.resources

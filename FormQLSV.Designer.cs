@@ -296,7 +296,7 @@
             this.dgvSinhVien.ReadOnly = true;
             this.dgvSinhVien.RowHeadersVisible = false;
             this.dgvSinhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSinhVien.Size = new System.Drawing.Size(472, 513);
+            this.dgvSinhVien.Size = new System.Drawing.Size(502, 520);
             this.dgvSinhVien.TabIndex = 17;
             this.dgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellClick);
             this.dgvSinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellContentClick);
@@ -339,7 +339,7 @@
             // lblTrang
             // 
             this.lblTrang.AutoSize = true;
-            this.lblTrang.Location = new System.Drawing.Point(738, 680);
+            this.lblTrang.Location = new System.Drawing.Point(737, 680);
             this.lblTrang.Name = "lblTrang";
             this.lblTrang.Size = new System.Drawing.Size(55, 13);
             this.lblTrang.TabIndex = 18;
@@ -367,7 +367,7 @@
             // 
             // btnSau
             // 
-            this.btnSau.Location = new System.Drawing.Point(830, 675);
+            this.btnSau.Location = new System.Drawing.Point(846, 675);
             this.btnSau.Name = "btnSau";
             this.btnSau.Size = new System.Drawing.Size(75, 23);
             this.btnSau.TabIndex = 21;
@@ -376,7 +376,7 @@
             // 
             // btnCuoiTrang
             // 
-            this.btnCuoiTrang.Location = new System.Drawing.Point(923, 675);
+            this.btnCuoiTrang.Location = new System.Drawing.Point(936, 675);
             this.btnCuoiTrang.Name = "btnCuoiTrang";
             this.btnCuoiTrang.Size = new System.Drawing.Size(75, 23);
             this.btnCuoiTrang.TabIndex = 22;

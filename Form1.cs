@@ -21,12 +21,10 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             InitializeComponent();
             
         }
-       
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void Email_Click(object sender, EventArgs e)
         {
 
@@ -45,9 +43,8 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
-                FormQLSV frm = new FormQLSV();
-                frm.Show();
-                this.Hide();
+                MainForm f = new MainForm();
+                f.Show();
             }
             else
             {
