@@ -356,6 +356,7 @@
             this.btnThem.TabIndex = 25;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // menuStrip1
             // 

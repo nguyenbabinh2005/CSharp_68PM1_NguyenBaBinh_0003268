@@ -12,3 +12,17 @@ C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.UCQLLH.resources
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.UCQLSinhVien.resources
 C:\Users\tungb\Desktop\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.MainForm.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.AssemblyReference.cache
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.Form1.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.FormQLSV.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.MainForm.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.Properties.Resources.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.UCQLLH.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.UCQLSinhVien.resources
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.GenerateResource.cache
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.csproj.CoreCompileInputs.cache
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\obj\Debug\CSharp_68PM1_NguyenBaBinh_0003268.pdb
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\bin\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe.config
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\bin\Debug\CSharp_68PM1_NguyenBaBinh_0003268.exe
+C:\Users\tungb\source\repos\CSharp_68PM1_NguyenBaBinh_0003268\bin\Debug\CSharp_68PM1_NguyenBaBinh_0003268.pdb
