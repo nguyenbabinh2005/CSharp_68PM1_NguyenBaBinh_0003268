@@ -302,6 +302,66 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
 
             return dt;
         }
+        public static DataTable LaySinhVienTheoLop(string maLop)
+        {
+            string sql = @"
+        SELECT *
+        FROM tbl_sinhviens
+        WHERE malop = @malop";
+
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = GetConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@malop", maLop);
+
+                using (SqlDataAdapter da =
+                       new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+        public static DataTable TimKiemSinhVienTheoLop(
+    string maLop,
+    string keyword,
+    int page,
+    int pageSize)
+        {
+            string sql = @"
+        SELECT id, hoten, gioitinh, ngaysinh, malop
+        FROM tbl_sinhviens
+        WHERE malop = @malop
+          AND (
+                hoten LIKE @kw
+             OR CAST(id AS VARCHAR(20)) LIKE @kw
+          )
+        ORDER BY id
+        OFFSET @offset ROWS
+        FETCH NEXT @pageSize ROWS ONLY";
+
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = GetConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@malop", maLop);
+                cmd.Parameters.AddWithValue("@kw", "%" + keyword + "%");
+                cmd.Parameters.AddWithValue("@offset", (page - 1) * pageSize);
+                cmd.Parameters.AddWithValue("@pageSize", pageSize);
+
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+
 
     }
 }

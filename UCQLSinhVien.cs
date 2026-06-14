@@ -9,20 +9,25 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
     {
         private int currentPage = 1;
         private int pageSize = 10;
-        private DataTable dt = new DataTable();
-        private int currentRow = -1;
-
+        private string maLop;
         public UCQLSinhVien()
         {
             InitializeComponent();
 
             dgvSinhVien.AutoGenerateColumns = false;
 
-            dt.Columns.Add("MaSV");
-            dt.Columns.Add("HoTen");
-            dt.Columns.Add("GioiTinh");
-            dt.Columns.Add("NgaySinh");
-            dt.Columns.Add("Lop");
+            LoadDanhSachLop();
+
+            LoadDuLieuTuDB(); // hiện tất cả sinh viên
+        }
+
+        public UCQLSinhVien(string maLop)
+        {
+            InitializeComponent();
+            this.maLop = maLop;
+
+            dgvSinhVien.AutoGenerateColumns = false;
+
             LoadDanhSachLop();
 
             LoadDuLieuTuDB();
@@ -51,34 +56,35 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
         /// </summary>
         private void LoadDuLieuTuDB()
         {
-            dt.Clear();
-            DataTable dtDB = DatabaseHelper.GetAllSinhVien();
-            foreach (DataRow row in dtDB.Rows)
+
+            if (string.IsNullOrEmpty(maLop))
             {
-                dt.Rows.Add(
-                    row["id"].ToString(),
-                    row["hoten"].ToString(),
-                    row["gioitinh"].ToString(),
-                    Convert.ToDateTime(row["ngaysinh"]).ToString("dd/MM/yyyy"),
-                    row["malop"].ToString()
-                );
+                dgvSinhVien.DataSource =
+                    DatabaseHelper.GetAllSinhVien();
             }
-            HienThiDuLieu();
+            else
+            {
+                dgvSinhVien.DataSource =
+                    DatabaseHelper.LaySinhVienTheoLop(maLop);
+            }
+
+            lblTrang.Text =
+                $"Trang 1/1 | {dgvSinhVien.Rows.Count} bản ghi";
         }
 
-        private void HienThiDuLieu()
-        {
-            dgvSinhVien.DataSource = dt;
-            lblTrang.Text = $"Trang 1/1 | {dt.Rows.Count} bản ghi";
-        }
+  
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (currentRow < 0) return;
+            int id = int.Parse(txtMaSV.Text);
 
-            int id = int.Parse(dt.Rows[currentRow]["MaSV"].ToString());
-            bool ok = DatabaseHelper.SuaSinhVien(id, txtHoTen.Text,
-                          cboGioiTinh.Text, dtpNgaySinh.Value, cboLop.Text);
+            bool ok = DatabaseHelper.SuaSinhVien(
+                id,
+                txtHoTen.Text,
+                cboGioiTinh.Text,
+                dtpNgaySinh.Value,
+                cboLop.Text);
+
             if (ok)
             {
                 MessageBox.Show("Cập nhật thành công!");
@@ -93,7 +99,8 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
         {
             txtMaSV.Clear();
             txtHoTen.Clear();
-            currentRow = -1;
+            cboGioiTinh.SelectedIndex = -1;
+            cboLop.SelectedIndex = -1;
         }
 
       
@@ -144,7 +151,7 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
         {
             if (e.RowIndex < 0) return;
 
-            currentRow = e.RowIndex;
+       
             DataGridViewRow row = dgvSinhVien.Rows[e.RowIndex];
 
             txtMaSV.Text = row.Cells[0].Value?.ToString();
@@ -155,9 +162,12 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (currentRow < 0) return;
+            if (txtMaSV.Text == "")
+                return;
 
-            int id = int.Parse(dt.Rows[currentRow]["MaSV"].ToString());
+            int id = int.Parse(txtMaSV.Text);
+
+        
             if (MessageBox.Show("Xác nhận xóa?", "Xóa",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -176,11 +186,23 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
 
             currentPage = 1;
 
-            DataTable dt =
-                DatabaseHelper.TimKiemSinhVien(
+            DataTable dt;
+
+            if (!string.IsNullOrEmpty(maLop))
+            {
+                dt = DatabaseHelper.TimKiemSinhVienTheoLop(
+                    maLop,
                     keyword,
                     currentPage,
                     pageSize);
+            }
+            else
+            {
+                dt = DatabaseHelper.TimKiemSinhVien(
+                    keyword,
+                    currentPage,
+                    pageSize);
+            }
 
             dgvSinhVien.DataSource = dt;
 

@@ -80,7 +80,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip3;
-        private System.Windows.Forms.Panel pnl_main;
+        public System.Windows.Forms.Panel pnl_main;
         private System.Windows.Forms.ToolStripMenuItem quảnLýSinhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýLớpHọcToolStripMenuItem;
     }

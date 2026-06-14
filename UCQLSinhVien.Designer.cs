@@ -32,11 +32,6 @@
             this.btnTruoc = new System.Windows.Forms.Button();
             this.btnDauTrang = new System.Windows.Forms.Button();
             this.lblTrang = new System.Windows.Forms.Label();
-            this.colLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSau = new System.Windows.Forms.Button();
             this.dgvSinhVien = new System.Windows.Forms.DataGridView();
             this.btnTim = new System.Windows.Forms.Button();
@@ -61,6 +56,11 @@
             this.quảnLýSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThem = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.colMaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSinhVien)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -101,41 +101,6 @@
             this.lblTrang.Size = new System.Drawing.Size(55, 13);
             this.lblTrang.TabIndex = 33;
             this.lblTrang.Text = "Trang 1/1";
-            // 
-            // colLop
-            // 
-            this.colLop.DataPropertyName = "Lop";
-            this.colLop.HeaderText = "Lớp";
-            this.colLop.Name = "colLop";
-            this.colLop.ReadOnly = true;
-            // 
-            // colNgaySinh
-            // 
-            this.colNgaySinh.DataPropertyName = "NgaySinh";
-            this.colNgaySinh.HeaderText = "Ngày Sinh";
-            this.colNgaySinh.Name = "colNgaySinh";
-            this.colNgaySinh.ReadOnly = true;
-            // 
-            // colGioiTinh
-            // 
-            this.colGioiTinh.DataPropertyName = "GioiTinh";
-            this.colGioiTinh.HeaderText = "Giới Tính";
-            this.colGioiTinh.Name = "colGioiTinh";
-            this.colGioiTinh.ReadOnly = true;
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.DataPropertyName = "HoTen";
-            this.colHoTen.HeaderText = "Họ và Tên";
-            this.colHoTen.Name = "colHoTen";
-            this.colHoTen.ReadOnly = true;
-            // 
-            // colMaSV
-            // 
-            this.colMaSV.DataPropertyName = "MaSV";
-            this.colMaSV.HeaderText = "Mã SV";
-            this.colMaSV.Name = "colMaSV";
-            this.colMaSV.ReadOnly = true;
             // 
             // btnSau
             // 
@@ -375,6 +340,41 @@
             this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // colMaSV
+            // 
+            this.colMaSV.DataPropertyName = "id";
+            this.colMaSV.HeaderText = "Mã SV";
+            this.colMaSV.Name = "colMaSV";
+            this.colMaSV.ReadOnly = true;
+            // 
+            // colHoTen
+            // 
+            this.colHoTen.DataPropertyName = "HoTen";
+            this.colHoTen.HeaderText = "Họ và Tên";
+            this.colHoTen.Name = "colHoTen";
+            this.colHoTen.ReadOnly = true;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới Tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            this.colGioiTinh.ReadOnly = true;
+            // 
+            // colNgaySinh
+            // 
+            this.colNgaySinh.DataPropertyName = "NgaySinh";
+            this.colNgaySinh.HeaderText = "Ngày Sinh";
+            this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.ReadOnly = true;
+            // 
+            // colLop
+            // 
+            this.colLop.DataPropertyName = "malop";
+            this.colLop.HeaderText = "Lớp";
+            this.colLop.Name = "colLop";
+            this.colLop.ReadOnly = true;
+            // 
             // UCQLSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,11 +412,6 @@
         private System.Windows.Forms.Button btnTruoc;
         private System.Windows.Forms.Button btnDauTrang;
         private System.Windows.Forms.Label lblTrang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaSV;
         private System.Windows.Forms.Button btnSau;
         private System.Windows.Forms.DataGridView dgvSinhVien;
         private System.Windows.Forms.Button btnTim;
@@ -441,5 +436,10 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýSinhViênToolStripMenuItem;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLop;
     }
 }

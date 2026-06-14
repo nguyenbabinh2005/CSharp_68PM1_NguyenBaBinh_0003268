@@ -39,10 +39,6 @@
             this.btnDauTrang = new System.Windows.Forms.Button();
             this.lblTrang = new System.Windows.Forms.Label();
             this.dgvLopHoc = new System.Windows.Forms.DataGridView();
-            this.colMaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coMalop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTim = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,6 +55,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.button1 = new System.Windows.Forms.Button();
+            this.colMaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coMalop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -162,34 +162,6 @@
             this.dgvLopHoc.Size = new System.Drawing.Size(502, 520);
             this.dgvLopHoc.TabIndex = 47;
             this.dgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellClick);
-            // 
-            // colMaID
-            // 
-            this.colMaID.DataPropertyName = "MaID";
-            this.colMaID.HeaderText = "Mã ID";
-            this.colMaID.Name = "colMaID";
-            this.colMaID.ReadOnly = true;
-            // 
-            // coMalop
-            // 
-            this.coMalop.DataPropertyName = "MaLop";
-            this.coMalop.HeaderText = "Mã lớp";
-            this.coMalop.Name = "coMalop";
-            this.coMalop.ReadOnly = true;
-            // 
-            // colTenLop
-            // 
-            this.colTenLop.DataPropertyName = "TenLop";
-            this.colTenLop.HeaderText = "Tên lớp";
-            this.colTenLop.Name = "colTenLop";
-            this.colTenLop.ReadOnly = true;
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.DataPropertyName = "GhiChu";
-            this.colGhiChu.HeaderText = "Ghi chú";
-            this.colGhiChu.Name = "colGhiChu";
-            this.colGhiChu.ReadOnly = true;
             // 
             // btnTim
             // 
@@ -350,6 +322,35 @@
             this.button1.TabIndex = 53;
             this.button1.Text = "Xem danh sách sinh viên";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnXemDSSV_Click);
+            // 
+            // colMaID
+            // 
+            this.colMaID.DataPropertyName = "id";
+            this.colMaID.HeaderText = "Mã ID";
+            this.colMaID.Name = "colMaID";
+            this.colMaID.ReadOnly = true;
+            // 
+            // coMalop
+            // 
+            this.coMalop.DataPropertyName = "MaLop";
+            this.coMalop.HeaderText = "Mã lớp";
+            this.coMalop.Name = "coMalop";
+            this.coMalop.ReadOnly = true;
+            // 
+            // colTenLop
+            // 
+            this.colTenLop.DataPropertyName = "TenLop";
+            this.colTenLop.HeaderText = "Tên lớp";
+            this.colTenLop.Name = "colTenLop";
+            this.colTenLop.ReadOnly = true;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.DataPropertyName = "ghichu";
+            this.colGhiChu.HeaderText = "Ghi chú";
+            this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.ReadOnly = true;
             // 
             // UCQLLH
             // 

@@ -6,25 +6,19 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
 {
     public partial class UCQLLH : UserControl
     {
-        private DataTable dt = new DataTable();
+
         private int currentRow = -1;
 
         public UCQLLH()
         {
             InitializeComponent();
             dgvLopHoc.AutoGenerateColumns = false;
-            dt.Columns.Add("MaID");
-            dt.Columns.Add("MaLop");
-            dt.Columns.Add("TenLop");
-            dt.Columns.Add("GhiChu");
-            HienThiDuLieu();
+     
+
+            TaiDuLieu();
         }
 
-        private void HienThiDuLieu()
-        {
-            dgvLopHoc.DataSource = dt;
-            lblTrang.Text = $"Trang 1/1  |  {dt.Rows.Count} bản ghi";
-        }
+  
         private void TaiDuLieu()
         {
             dgvLopHoc.DataSource =
@@ -128,23 +122,7 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             txtMaLop.BackColor = System.Drawing.Color.White;
         }
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            string keyword = txtTimKiem.Text.Trim().ToLower();
-            DataTable dtFilter = dt.Clone();
-            foreach (DataRow row in dt.Rows)
-            {
-                if (row["MaID"].ToString().ToLower().Contains(keyword) ||
-                    row["MaLop"].ToString().ToLower().Contains(keyword) ||
-                    row["TenLop"].ToString().ToLower().Contains(keyword))
-                {
-                    dtFilter.ImportRow(row);
-                }
-            }
-            dgvLopHoc.DataSource = dtFilter;
-            lblTrang.Text = $"Trang 1/1  |  {dtFilter.Rows.Count} bản ghi";
-        }
-
+        
         private void dgvLopHoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -158,20 +136,28 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             txtMaLop.BackColor = System.Drawing.Color.LightGray;
         }
 
+
         private void btnXemDSSV_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtMaLop.Text))
+            {
+                MessageBox.Show("Vui lòng chọn lớp!");
+                return;
+            }
+
             Form parentForm = this.FindForm();
 
             if (parentForm is MainForm main)
             {
-                UCQLSinhVien uc = new UCQLSinhVien();
+                UCQLSinhVien uc =
+                    new UCQLSinhVien(txtMaLop.Text);
+
                 uc.Dock = DockStyle.Fill;
 
-                main.Controls["pnl_main"].Controls.Clear();
-                main.Controls["pnl_main"].Controls.Add(uc);
+                main.pnl_main.Controls.Clear();
+                main.pnl_main.Controls.Add(uc);
             }
-        }
 
-        
+        }
     }
 }
