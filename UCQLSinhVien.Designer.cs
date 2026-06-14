@@ -165,6 +165,7 @@
             this.dgvSinhVien.Size = new System.Drawing.Size(502, 520);
             this.dgvSinhVien.TabIndex = 32;
             this.dgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellClick);
+   
             // 
             // btnTim
             // 
@@ -214,6 +215,7 @@
             // 
             // btnSua
             // 
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnSua.Location = new System.Drawing.Point(268, 525);
             this.btnSua.Name = "btnSua";

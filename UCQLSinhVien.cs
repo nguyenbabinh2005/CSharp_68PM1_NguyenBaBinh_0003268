@@ -73,22 +73,18 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
         {
             if (currentRow < 0) return;
 
-            dt.Rows[currentRow]["HoTen"] = txtHoTen.Text;
-            dt.Rows[currentRow]["GioiTinh"] = cboGioiTinh.Text;
-            dt.Rows[currentRow]["NgaySinh"] = dtpNgaySinh.Value.ToString("dd/MM/yyyy");
-            dt.Rows[currentRow]["Lop"] = cboLop.Text;
-
-            HienThiDuLieu();
+            int id = int.Parse(dt.Rows[currentRow]["MaSV"].ToString());
+            bool ok = DatabaseHelper.SuaSinhVien(id, txtHoTen.Text,
+                          cboGioiTinh.Text, dtpNgaySinh.Value, cboLop.Text);
+            if (ok)
+            {
+                MessageBox.Show("Cập nhật thành công!");
+                LoadDuLieuTuDB();
+                btnLamMoi_Click(null, null);
+            }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (currentRow < 0) return;
-
-            dt.Rows[currentRow].Delete();
-            HienThiDuLieu();
-            btnLamMoi_Click(null, null);
-        }
+    
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -154,9 +150,5 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             cboLop.Text = row.Cells[4].Value?.ToString();
         }
 
-        private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
