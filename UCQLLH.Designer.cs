@@ -86,7 +86,6 @@
             this.txtMaID.Name = "txtMaID";
             this.txtMaID.Size = new System.Drawing.Size(419, 20);
             this.txtMaID.TabIndex = 1;
-
             // 
             // label1
             // 
@@ -160,10 +159,9 @@
             this.dgvLopHoc.ReadOnly = true;
             this.dgvLopHoc.RowHeadersVisible = false;
             this.dgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellClick);
             this.dgvLopHoc.Size = new System.Drawing.Size(502, 520);
             this.dgvLopHoc.TabIndex = 47;
-
+            this.dgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellClick);
             // 
             // colMaID
             // 
@@ -352,7 +350,6 @@
             this.button1.TabIndex = 53;
             this.button1.Text = "Xem danh sách sinh viên";
             this.button1.UseVisualStyleBackColor = false;
-           
             // 
             // UCQLLH
             // 

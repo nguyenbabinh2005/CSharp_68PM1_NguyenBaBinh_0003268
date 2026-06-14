@@ -25,38 +25,95 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             dgvLopHoc.DataSource = dt;
             lblTrang.Text = $"Trang 1/1  |  {dt.Rows.Count} bản ghi";
         }
+        private void TaiDuLieu()
+        {
+            dgvLopHoc.DataSource =
+                DatabaseHelper.LayDanhSachLopHoc();
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaLop.Text == "" || txtTenLop.Text == "")
+            if (string.IsNullOrWhiteSpace(txtMaLop.Text) ||
+        string.IsNullOrWhiteSpace(txtTenLop.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Cảnh báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Vui lòng nhập đầy đủ thông tin!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
                 return;
             }
-            dt.Rows.Add((dt.Rows.Count + 1).ToString(), txtMaLop.Text, txtTenLop.Text, txtGhiChu.Text);
-            HienThiDuLieu();
-            btnLamMoi_Click(null, null);
+
+            bool result = DatabaseHelper.ThemLopHoc(
+                txtMaLop.Text.Trim(),
+                txtTenLop.Text.Trim(),
+                txtGhiChu.Text.Trim());
+
+            if (result)
+            {
+                MessageBox.Show(
+                    "Thêm lớp học thành công!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                TaiDuLieu(); // load lại DataGridView
+
+                btnLamMoi_Click(null, null);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (currentRow < 0) return;
-            dt.Rows[currentRow]["MaLop"] = txtMaLop.Text;
-            dt.Rows[currentRow]["TenLop"] = txtTenLop.Text;
-            dt.Rows[currentRow]["GhiChu"] = txtGhiChu.Text;
-            HienThiDuLieu();
+            if (string.IsNullOrWhiteSpace(txtMaLop.Text))
+            {
+                MessageBox.Show("Vui lòng chọn lớp cần sửa!");
+                return;
+            }
+
+            bool result = DatabaseHelper.SuaLopHoc(
+                txtMaLop.Text.Trim(),
+                txtTenLop.Text.Trim(),
+                txtGhiChu.Text.Trim());
+
+            if (result)
+            {
+                MessageBox.Show("Sửa lớp thành công!");
+
+                TaiDuLieu();
+
+                btnLamMoi_Click(null, null);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (currentRow < 0) return;
-            if (MessageBox.Show("Xác nhận xóa?", "Xóa",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (string.IsNullOrWhiteSpace(txtMaLop.Text))
             {
-                dt.Rows[currentRow].Delete();
-                HienThiDuLieu();
-                btnLamMoi_Click(null, null);
+                MessageBox.Show("Vui lòng chọn lớp cần xóa!");
+                return;
+            }
+
+            DialogResult rs = MessageBox.Show(
+                "Xác nhận xóa lớp học?",
+                "Thông báo",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (rs == DialogResult.Yes)
+            {
+                bool result = DatabaseHelper.XoaLopHoc(
+                    txtMaLop.Text.Trim());
+
+                if (result)
+                {
+                    MessageBox.Show("Xóa lớp thành công!");
+
+                    TaiDuLieu();
+
+                    btnLamMoi_Click(null, null);
+                }
             }
         }
 

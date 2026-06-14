@@ -209,6 +209,99 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
 
             return dt;
         }
+        public static bool ThemLopHoc(string maLop, string tenLop, string ghiChu)
+        {
+            string sql = "INSERT INTO tbl_lophoc (malop, tenlop, ghichu) VALUES (@malop, @tenlop, @ghichu)";
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@malop", maLop);
+                    cmd.Parameters.AddWithValue("@tenlop", tenLop);
+                    cmd.Parameters.AddWithValue("@ghichu", ghiChu ?? "");
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi thêm lớp:\n" + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool SuaLopHoc(string maLop, string tenLop, string ghiChu)
+        {
+            string sql = "UPDATE tbl_lophoc SET tenlop=@tenlop, ghichu=@ghichu WHERE malop=@malop";
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@malop", maLop);
+                    cmd.Parameters.AddWithValue("@tenlop", tenLop);
+                    cmd.Parameters.AddWithValue("@ghichu", ghiChu ?? "");
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi sửa lớp:\n" + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool XoaLopHoc(string maLop)
+        {
+            string sql = "DELETE FROM tbl_lophoc WHERE malop=@malop";
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@malop", maLop);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xóa lớp:\n" + ex.Message);
+                return false;
+            }
+        }
+        public static DataTable LayDanhSachLopHoc()
+        {
+            string sql = @"
+        SELECT id,
+               malop,
+               tenlop,
+               ghichu
+        FROM tbl_lophoc
+        ORDER BY id";
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+                {
+                    da.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi lấy danh sách lớp:\n" + ex.Message);
+            }
+
+            return dt;
+        }
 
     }
 }
