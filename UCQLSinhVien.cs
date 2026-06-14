@@ -97,18 +97,7 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             currentRow = -1;
         }
 
-        private void dgvSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            currentRow = e.RowIndex;
-            DataGridViewRow row = dgvSinhVien.Rows[e.RowIndex];
-
-            txtMaSV.Text = row.Cells[0].Value?.ToString();
-            txtHoTen.Text = row.Cells[1].Value?.ToString();
-            cboGioiTinh.Text = row.Cells[2].Value?.ToString();
-            cboLop.Text = row.Cells[4].Value?.ToString();
-        }
+      
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
@@ -149,6 +138,24 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
                 LoadDuLieuTuDB();     
                 btnLamMoi_Click(null, null);
             }
+
+        }
+
+        private void dgvSinhVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            currentRow = e.RowIndex;
+            DataGridViewRow row = dgvSinhVien.Rows[e.RowIndex];
+
+            txtMaSV.Text = row.Cells[0].Value?.ToString();
+            txtHoTen.Text = row.Cells[1].Value?.ToString();
+            cboGioiTinh.Text = row.Cells[2].Value?.ToString();
+            cboLop.Text = row.Cells[4].Value?.ToString();
+        }
+
+        private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
