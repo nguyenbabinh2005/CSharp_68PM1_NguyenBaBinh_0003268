@@ -165,7 +165,6 @@
             this.dgvSinhVien.Size = new System.Drawing.Size(502, 520);
             this.dgvSinhVien.TabIndex = 32;
             this.dgvSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellClick);
-   
             // 
             // btnTim
             // 
@@ -202,6 +201,7 @@
             this.btnLamMoi.TabIndex = 28;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -212,10 +212,10 @@
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnSua.Location = new System.Drawing.Point(268, 525);
             this.btnSua.Name = "btnSua";
@@ -223,6 +223,7 @@
             this.btnSua.TabIndex = 26;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // cboLop
             // 

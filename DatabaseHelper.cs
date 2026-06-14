@@ -120,5 +120,53 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
                 return false;
             }
         }
+        public static bool SuaSinhVien(int id, string hoTen, string gioiTinh,
+    DateTime ngaySinh, string maLop)
+        {
+            string sql = @"UPDATE tbl_sinhviens
+                   SET hoten=@hoten, gioitinh=@gioitinh, ngaysinh=@ngaysinh, malop=@malop
+                   WHERE id=@id";
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@hoten", hoTen);
+                    cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
+                    cmd.Parameters.AddWithValue("@ngaysinh", ngaySinh.Date);
+                    cmd.Parameters.AddWithValue("@malop", maLop);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi sửa sinh viên:\n" + ex.Message);
+                return false;
+            }
+        }
+        public static bool XoaSinhVien(int id)
+        {
+            string sql = "DELETE FROM tbl_sinhviens WHERE id=@id";
+            try
+            {
+                using (SqlConnection conn = GetConnection())
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xóa sinh viên:\n" + ex.Message);
+                return false;
+            }
+        }
+
     }
 }

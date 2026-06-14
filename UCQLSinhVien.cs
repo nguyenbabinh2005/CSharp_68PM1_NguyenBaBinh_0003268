@@ -150,5 +150,23 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             cboLop.Text = row.Cells[4].Value?.ToString();
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (currentRow < 0) return;
+
+            int id = int.Parse(dt.Rows[currentRow]["MaSV"].ToString());
+            if (MessageBox.Show("Xác nhận xóa?", "Xóa",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool ok = DatabaseHelper.XoaSinhVien(id);
+                if (ok)
+                {
+                    LoadDuLieuTuDB();
+                    btnLamMoi_Click(null, null);
+                }
+            }
+        }
+
+        
     }
 }
