@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Data;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace CSharp_68PM1_NguyenBaBinh_0003268
 {
     public partial class UCQLSinhVien : UserControl
     {
+        private int currentPage = 1;
+        private int pageSize = 10;
         private DataTable dt = new DataTable();
         private int currentRow = -1;
 
@@ -167,6 +170,22 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
             }
         }
 
-        
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text.Trim();
+
+            currentPage = 1;
+
+            DataTable dt =
+                DatabaseHelper.TimKiemSinhVien(
+                    keyword,
+                    currentPage,
+                    pageSize);
+
+            dgvSinhVien.DataSource = dt;
+
+            lblTrang.Text =
+                $"Trang {currentPage} | {dt.Rows.Count} bản ghi";
+        }
     }
 }

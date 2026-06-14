@@ -167,6 +167,48 @@ namespace CSharp_68PM1_NguyenBaBinh_0003268
                 return false;
             }
         }
+        public static DataTable TimKiemSinhVien(
+    string keyword,
+    int page,
+    int pageSize)
+        {
+            string sql = @"
+        SELECT id,
+               hoten,
+               gioitinh,
+               ngaysinh,
+               malop
+        FROM tbl_sinhviens
+        WHERE CAST(id AS VARCHAR(20)) LIKE @kw
+           OR hoten LIKE @kw
+           OR malop LIKE @kw
+        ORDER BY id
+        OFFSET @offset ROWS
+        FETCH NEXT @pageSize ROWS ONLY";
+
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = GetConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@kw",
+                    "%" + keyword + "%");
+
+                cmd.Parameters.AddWithValue("@offset",
+                    (page - 1) * pageSize);
+
+                cmd.Parameters.AddWithValue("@pageSize",
+                    pageSize);
+
+                using (SqlDataAdapter da =
+                       new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
 
     }
 }
